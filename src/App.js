@@ -14,12 +14,12 @@ const App = () => {
   const clickHandler = () => {
     setButtonPressed(true);
   }
-  
+
   return (
     <div className="App">
       <header className="App-header">
         <div>
-          <a href="#" className="button" onClick={clickHandler}>Click Me!</a>
+          {(!buttonPressed) && <a href="#" className="button" onClick={clickHandler}>Click Me!</a>}
           {(buttonPressed) && <Bracket rounds={rounds} />}
         </div>  
       </header>
