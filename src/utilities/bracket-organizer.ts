@@ -1,6 +1,6 @@
 import { Bracket, RoundProps } from 'react-brackets';
 
-const rounds: RoundProps[] = [
+export const rounds: RoundProps[] = [
   {
     title: 'Round one',
     seeds: [

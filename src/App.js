@@ -1,29 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
-import {RoundProps} from './utilities/bracket-organizer.ts';
+import { RoundProps, rounds} from './utilities/bracket-organizer.ts';
+import { Bracket } from 'react-brackets';
 
 const list = ["a ", "b ", "c", "d"];
 
-const formBracket = () => {
-	return <Bracket rounds={rounds} />;
-};
+// const formBracket = () => {
+// 	return <Bracket rounds={rounds} />;
+// };
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>src/App.js</code>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {formBracket}
-        </a>
+        <div>
+          <Bracket rounds={rounds} />
+        </div>  
       </header>
     </div>
   );
