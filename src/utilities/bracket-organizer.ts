@@ -1,4 +1,5 @@
 import { Bracket, RoundProps } from 'react-brackets';
+import { shuffleList } from './team-shuffler';
 
 export const rounds: RoundProps[] = [
   {
@@ -7,22 +8,22 @@ export const rounds: RoundProps[] = [
       {
         id: 1,
         date: new Date().toDateString(),
-        teams: [{ name: 'Team A' }, { name: 'Team B' }],
+        teams: [{ name: shuffleList[0] }, { name: shuffleList[1] }],
       },
       {
         id: 2,
         date: new Date().toDateString(),
-        teams: [{ name: 'Team C' }, { name: 'Team D' }],
+        teams: [{ name: shuffleList[2] }, { name: shuffleList[3] }],
       },
     ],
   },
   {
-    title: 'Round one',
+    title: 'Round two',
     seeds: [
       {
         id: 3,
         date: new Date().toDateString(),
-        teams: [{ name: 'Team A' }, { name: 'Team C' }],
+        // teams: [{ name: 'Team A' }, { name: 'Team C' }],
       },
     ],
   },
