@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 import { RoundProps, rounds} from './utilities/bracket-organizer.ts';
 import { Bracket } from 'react-brackets';
@@ -8,12 +8,19 @@ import { Bracket } from 'react-brackets';
 // 	return <Bracket rounds={rounds} />;
 // };
 
-function App() {
+const App = () => {
+  const [buttonPressed, setButtonPressed] = useState(false);
+
+  const clickHandler = () => {
+    setButtonPressed(true);
+  }
+  
   return (
     <div className="App">
       <header className="App-header">
         <div>
-          <Bracket rounds={rounds} />
+          <a href="#" className="button" onClick={clickHandler}>Click Me!</a>
+          {(buttonPressed) && <Bracket rounds={rounds} />}
         </div>  
       </header>
     </div>
