@@ -11,7 +11,7 @@ import { Bracket } from 'react-brackets';
 const App = () => {
   const [buttonPressed, setButtonPressed] = useState(false);
 
-  const [names, setNames] = useState(['Bob', 'Rob']);
+  const [names, setNames] = useState([]);
 
   const clickHandler = () => {
     setButtonPressed(true);
@@ -21,11 +21,12 @@ const App = () => {
     <div className="App">
       <header className="App-header">
       <div className="names-list">
-        { 
+      <ol>{ 
           names.map(name =>
-            <div>{name}</div>
+            <li>{name}</li>
             ) 
-        }
+          
+        }</ol>
         </div>
 
         <div>
