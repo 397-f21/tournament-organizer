@@ -1,7 +1,7 @@
-const list = ["a ", "b ", "c", "d"];
+// const list = ["a ", "b ", "c", "d"];
 
 // given an array arr and length n (optional), shuffle array
-const shuffle = (arr, n) => {
+export const shuffle = (arr, n) => {
 	if (n === undefined) {
 		n = arr.length;
 	}
@@ -30,4 +30,4 @@ const shuffle = (arr, n) => {
 	return arr.slice(0, nInd);
 };
 
-export const shuffleList =  shuffle(list);
+// export const shuffleList =  shuffle(list);
