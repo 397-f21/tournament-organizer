@@ -21,6 +21,7 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
                 </ol>
             </div>
             <div>
+                {(!buttonPressed) && <h2>Please Enter 4 Names:</h2>}
                 <form>
                 {!(buttonPressed) && <input type='text' onChange={e => changeHandler(e.target.value)}></input>}
                 {!(buttonPressed) && <a href="#" className="button" onClick={() => addName(input, names, setNames)}>Add Name</a>}                

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { RoundProps, rounds} from './utilities/bracket-organizer.ts';
 import { Bracket } from 'react-brackets';
+import { shuffle } from './utilities/team-shuffler';
 import NameInput from './components/NameInput';
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
         <NameInput names={names} setNames={setNames} buttonPressed={buttonPressed} />
         <div>
           {(!buttonPressed) && <a href="#" className="button" onClick={clickHandler}>Click Me!</a>}
-          {(buttonPressed) && <Bracket rounds={rounds(names)} />}
+          {(buttonPressed) && <Bracket rounds={rounds(shuffle(names))} />}
         </div>  
       </header>
     </div>
