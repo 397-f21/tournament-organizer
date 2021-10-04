@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 const addName = (input, names, setNames) => {  //name is a str
     setNames(names => [...names, input]);
+    document.getElementById("nameSubmit").value = '';
 }
 
 const NameInput = ({ names, setNames, buttonPressed }) => {
@@ -23,8 +24,8 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
             <div>
                 {(!buttonPressed) && <h2>Please Enter 4 Names:</h2>}
                 <form>
-                {!(buttonPressed) && <input type='text' onChange={e => changeHandler(e.target.value)}></input>}
-                {!(buttonPressed) && <a href="#" className="button" onClick={() => addName(input, names, setNames)}>Add Name</a>}                
+                {!(buttonPressed) && <input id="nameSubmit" type='text' onChange={e => changeHandler(e.target.value)}></input>}
+                {!(buttonPressed) && <a  href="#" className="button" onClick={() => addName(input, names, setNames)}>Add Name</a>}                
                 </form>
             </div>
         </>
