@@ -12,6 +12,14 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
         updateInput(txt);
     }
 
+    const inputRef = React.useRef(null)
+
+    const _handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+          inputRef.current.click();
+        }
+      }
+
     return (
         <>
             <div className="names-list">
@@ -23,10 +31,10 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
             </div>
             <div>
                 {(!buttonPressed) && <h2>Please Enter 4 Names:</h2>}
-                <form>
-                {!(buttonPressed) && <input id="nameSubmit" type='text' onChange={e => changeHandler(e.target.value)}></input>}
-                {!(buttonPressed) && <a  href="#" className="button" onClick={() => addName(input, names, setNames)}>Add Name</a>}                
-                </form>
+                <div id="name-entry">
+                {!(buttonPressed) && <input id="nameSubmit" type='text' onKeyDown={_handleKeyDown} onChange={e => changeHandler(e.target.value)}></input>}
+                {!(buttonPressed) && <a  href="#" className="button" ref={inputRef} onClick={() => addName(input, names, setNames)}>Add Name</a>}                
+                </div>
             </div>
         </>
     );
