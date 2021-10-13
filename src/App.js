@@ -38,7 +38,6 @@ const App = () => {
     }
     n = n << 1;
 
-
     console.log("numGiven: " + numGiven);
     console.log("nextPowerOf2: " + n);
     for (let i = 0; i < n - numGiven; i++) {
