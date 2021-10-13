@@ -21,14 +21,15 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
       }
 
     return (
-        <>
-            <div className="names-list">
-                <ol>
-                {names.map((name, key)=>
+        <> {(!buttonPressed) &&
+            < div className="names-list">
+            <ol>
+                {names.map((name, key) =>
                     <li key={key}>{name}</li>
                 )}
-                </ol>
-            </div>
+            </ol>
+        </div>
+        }
             <div>
                 {(!buttonPressed) && <h2>Please Enter 4 Names:</h2>}
                 <div id="name-entry">
