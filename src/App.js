@@ -6,6 +6,22 @@ import { shuffle } from './utilities/team-shuffler';
 import NameInput from './components/NameInput';
 import './index.css';
 
+import { initializeApp } from 'firebase/app';
+import { getDatabase, onValue, ref, set } from 'firebase/database';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAbJm8d0-U6cg0HIJWr6ywTxbkeAAtdCJc",
+  authDomain: "cs497-purple-project1.firebaseapp.com",
+  projectId: "cs497-purple-project1",
+  storageBucket: "cs497-purple-project1.appspot.com",
+  messagingSenderId: "1021754438766",
+  appId: "1:1021754438766:web:a48fbcc3b1f7eca480627f",
+  measurementId: "G-5WE4X9G2TB"
+};
+
+const firebase = initializeApp(firebaseConfig);
+const database = getDatabase(firebase);
+
 const App = () => {
   const [buttonPressed, setButtonPressed] = useState(false);
 
