@@ -1,3 +1,5 @@
+@import "external-css.css";
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -8,11 +10,11 @@ body {
 }
 
 div  {
-  color: white;
+  color: black;
 }
 
 a {
-  color: white;
+  color: black;
 }
 
 code {
