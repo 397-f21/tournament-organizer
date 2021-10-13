@@ -16,18 +16,6 @@ export const rounds = (names: string[]): RoundProps[] => {
     {
       title: 'Round one',
       seeds: seeding,
-      // seeds: [
-      //   {
-      //     id: 1,
-      //     date: new Date().toDateString(),
-      //     teams: [{ name: (names ? names[0] : '') }, { name: (names ? names[1] : '') }],
-      //   },
-      //   {
-      //     id: 2,
-      //     date: new Date().toDateString(),
-      //     teams: [{ name: (names ? names[2] : '') }, { name: (names ? names[3] : '') }],
-      //   },
-      // ],
     },
     {
       title: 'Round two',

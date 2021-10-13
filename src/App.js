@@ -31,7 +31,6 @@ const App = () => {
 
     // make this a function later (rounds up to the next power of 2);
     let numGiven = names.length;
-    let nextPowOf2 = Math.pow(2, Math.round(Math.log(numGiven) / Math.log(2)));
 
     let n = numGiven - 1;
     while ((n & n - 1) !== 0) {
@@ -42,7 +41,7 @@ const App = () => {
 
     console.log("numGiven: " + numGiven);
     console.log("nextPowerOf2: " + n);
-    for (let i = 0; i < nextPowOf2 - numGiven; i++) {
+    for (let i = 0; i < n - numGiven; i++) {
       names.push("BYE");
     }
     setNames(names);
