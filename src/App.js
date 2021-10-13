@@ -54,7 +54,9 @@ const App = () => {
         <NameInput names={names} setNames={setNames} buttonPressed={buttonPressed} />
         <div>
           {(!buttonPressed) && <a href="#" className="button" onClick={clickHandler}>Generate Bracket</a>}
-          {(buttonPressed) && <Bracket rounds={rounds(shuffle(names))} />}
+          <div class="bracket">
+            {(buttonPressed) && <Bracket rounds={rounds(shuffle(names))} />}
+          </div>
         </div>  
       </header>
     </div>
