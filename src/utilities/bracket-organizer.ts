@@ -27,18 +27,19 @@ export const rounds = (names: string[]): RoundProps[] => {
   seeding.push(seeding1);
   seeding.push(seeding2);
 
-  // return (
-    
-  // );
+  seeding.map((element, index) => {
+    const dict = {
+      'title': 'Round ' + String(index),
+      'seeds': element,
+    }
+    return dict
+    })
 
-  return([
-    {
-      title: 'Round one',
-      seeds: seeding1,
-    },
-    {
-      title: 'Round two',
-      seeds: seeding2,
-    },
-  ]);
+  return(seeding.map((element, index) => {
+    const dict = {
+      'title': 'Round ' + String(index + 1),
+      'seeds': element,
+    }
+    return dict
+    }));
 };

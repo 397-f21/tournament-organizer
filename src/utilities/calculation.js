@@ -8,7 +8,8 @@ export const calculatePower = (numGiven) => {
 
 export const namesFillBye = (names) => {
   // make this a function later (rounds up to the next power of 2);
-  let numGiven = names.length;
+  const numGiven = names.length;
+  const n = calculatePower(numGiven);
 
   console.log("numGiven: " + numGiven);
   console.log("nextPowerOf2: " + n);
