@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 
 const addName = (input, names, setNames) => {  //name is a str
-    setNames(names => [...names, input]);
-    document.getElementById("nameSubmit").value = '';
+    if (!input.trim()) {
+        alert('Please enter a name');
+    } else {
+        setNames(names => [...names, input]);
+        document.getElementById("nameSubmit").value = '';
+    }
 }
 
 const NameInput = ({ names, setNames, buttonPressed }) => {
@@ -12,7 +16,7 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
         updateInput(txt);
     }
 
-    const inputRef = React.useRef(null)
+    const inputRef = React.useRef(null);
 
     const _handleKeyDown = (e) => {
         if (e.key === 'Enter') {

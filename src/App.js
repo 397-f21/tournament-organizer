@@ -5,7 +5,7 @@ import { Bracket } from 'react-brackets';
 import { shuffle } from './utilities/team-shuffler';
 import NameInput from './components/NameInput';
 import './index.css';
-import {calculatePower} from './utilities/calculation.js'
+import { namesFillBye } from './utilities/calculation.js'
 
 import { initializeApp } from 'firebase/app';
 import { getDatabase, onValue, ref, set } from 'firebase/database';
@@ -29,7 +29,7 @@ const App = () => {
   const [names, setNames] = useState([]); //names is a list
 
   const clickHandler = () => {
-    calculatePower(names);
+    namesFillBye(names);
     setNames(names);
     setButtonPressed(true);
   }
