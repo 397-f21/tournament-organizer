@@ -38,12 +38,14 @@ const App = () => {
     <div className="App">
       <header className="App-header">
         <h1>TourneyGen</h1>
+        
         <NameInput names={names} setNames={setNames} buttonPressed={buttonPressed} />
         <div>
           {(!buttonPressed) && <a href="#" className="button" onClick={clickHandler}>Generate Bracket</a>}
-          <div class="bracket">
-            {(buttonPressed) && <Bracket rounds={rounds(shuffle(names))} />}
-          </div>
+          {(buttonPressed) &&<div class="bracket">
+            <h5>BYE refers to one automatically advancing to the next round </h5>
+             <Bracket rounds={rounds(shuffle(names))} />
+          </div>}
         </div>  
       </header>
     </div>
