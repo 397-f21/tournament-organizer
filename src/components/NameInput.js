@@ -16,6 +16,13 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
         updateInput(txt);
     }
 
+    const deleteName = (id) => {
+        console.log("ID: " + id);
+        names.splice(id, 1);
+        setNames(names);
+        console.log("names: " + names);
+    }
+
     const inputRef = React.useRef(null);
 
     const _handleKeyDown = (e) => {
@@ -29,7 +36,9 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
             < div className="names-list">
             <ol>
                 {names.map((name, key) =>
-                    <li key={key}>{name}</li>
+                    <div >
+                        <li key={key}>{name}<a href="#" onClick={() => deleteName(key)}>   X</a></li> 
+                    </div>
                 )}
             </ol>
         </div>
