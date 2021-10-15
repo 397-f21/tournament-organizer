@@ -4,6 +4,7 @@ export const calculatePower = (numGiven) => {
     n = n & n - 1;
   }
   n = n << 1;
+  return n;
 }
 
 export const namesFillBye = (names) => {
