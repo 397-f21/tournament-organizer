@@ -5,6 +5,7 @@ import { Bracket } from 'react-brackets';
 import { shuffle } from './utilities/team-shuffler';
 import NameInput from './components/NameInput';
 import './index.css';
+import {calculatePower} from './utilities/calculation.js'
 
 import { initializeApp } from 'firebase/app';
 import { getDatabase, onValue, ref, set } from 'firebase/database';
@@ -28,23 +29,10 @@ const App = () => {
   const [names, setNames] = useState([]); //names is a list
 
   const clickHandler = () => {
-
-    // make this a function later (rounds up to the next power of 2);
-    let numGiven = names.length;
-
-    let n = numGiven - 1;
-    while ((n & n - 1) !== 0) {
-      n = n & n - 1;
-    }
-    n = n << 1;
-
-    console.log("numGiven: " + numGiven);
-    console.log("nextPowerOf2: " + n);
-    for (let i = 0; i < n - numGiven; i++) {
-      names.push("BYE");
-    }
+    calculatePower(names);
     setNames(names);
     setButtonPressed(true);
+    console.log("names");
   }
 
   return (
