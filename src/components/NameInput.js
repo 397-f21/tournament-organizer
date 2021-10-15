@@ -16,10 +16,10 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
         updateInput(txt);
     }
 
-    const deleteName = (id) => {
+    const deleteName = (id, setNames) => {
         console.log("ID: " + id);
         names.splice(id, 1);
-        setNames(names);
+        setNames(names => [...names]);
         console.log("names: " + names);
     }
 
@@ -37,7 +37,7 @@ const NameInput = ({ names, setNames, buttonPressed }) => {
             <ol>
                 {names.map((name, key) =>
                     <div >
-                        <li key={key}>{name}<a href="#" onClick={() => deleteName(key)}>   X</a></li> 
+                        <li key={key}>{name}<a href="#" onClick={() => deleteName(key, setNames)}>X</a></li> 
                     </div>
                 )}
             </ol>
