@@ -1,4 +1,5 @@
 import { Bracket, RoundProps } from 'react-brackets';
+import {calculatePower} from './calculation.js'
 
 export const rounds = (names: string[]): RoundProps[] => {
 
@@ -12,10 +13,6 @@ export const rounds = (names: string[]): RoundProps[] => {
     seeding[idCount - 1] = bracketSegment;
     seed += 2;
     idCount += 1;
-  }
-
-  while(names.length > 1){
-    
   }
 
   let seeding2 = [];

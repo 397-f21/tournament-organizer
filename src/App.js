@@ -32,7 +32,6 @@ const App = () => {
     calculatePower(names);
     setNames(names);
     setButtonPressed(true);
-    console.log("names");
   }
 
   return (
