@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { RoundProps, rounds} from './utilities/bracket-organizer.ts';
+import { rounds} from './utilities/bracket-organizer.ts';
 import { Bracket } from 'react-brackets';
 import { shuffle } from './utilities/team-shuffler';
 import NameInput from './components/NameInput';
@@ -8,7 +8,8 @@ import './index.css';
 import { namesFillBye } from './utilities/calculation.js'
 
 import { initializeApp } from 'firebase/app';
-import { getDatabase, onValue, ref, set } from 'firebase/database';
+
+import TourneyGenLogo from './TourneyGenLogo.png';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAbJm8d0-U6cg0HIJWr6ywTxbkeAAtdCJc",
@@ -21,7 +22,6 @@ const firebaseConfig = {
 };
 
 const firebase = initializeApp(firebaseConfig);
-const database = getDatabase(firebase);
 
 const App = () => {
   const [buttonPressed, setButtonPressed] = useState(false);
@@ -37,7 +37,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>TourneyGen</h1>
+        <img src={TourneyGenLogo} alt="Tourney Gen Logo" />
         
         <NameInput names={names} setNames={setNames} buttonPressed={buttonPressed} />
         <div>
