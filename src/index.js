@@ -4,9 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { BrowserView, MobileView } from 'react-device-detect';
+
 ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <BrowserView>
+        <App />
+      </BrowserView>
+      <MobileView>
+        <h1>This is rendered only on browser</h1>
+      </MobileView>
     </React.StrictMode>,
     document.getElementById('root'),
 );
